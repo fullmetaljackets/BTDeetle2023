@@ -74,7 +74,11 @@ shifterValve = new DoubleSolenoid(8, PneumaticsModuleType.REVPH, 0, 1);
         shifterValve.set(Value.kReverse);
     }
     public void my_shifterToggle() {
-        shifterValve.toggle();
+        if(shifterValve.get() == Value.kOff){
+            my_shiftLowGear();
+        }else{
+            shifterValve.toggle();
+        }
     }
     private boolean get_Higear(){
         return shifterValve.get() == Value.kForward;
