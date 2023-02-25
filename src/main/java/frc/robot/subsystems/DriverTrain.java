@@ -107,7 +107,7 @@ leftTalonFXEnhanced3.configPeakOutputReverse(-1, 30);
         
 
 
-leftMotorGroup = new MotorControllerGroup(leftTalonFXEnhanced1, leftTalonFXEnhanced2  );
+leftMotorGroup = new MotorControllerGroup(leftTalonFXEnhanced1, leftTalonFXEnhanced2, leftTalonFXEnhanced3 );
  addChild("LeftMotorGroup",leftMotorGroup);
  
 
@@ -195,7 +195,7 @@ differentialDrive1.setMaxOutput(1.0);
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
     public void my_DriveArchade(double speed, double rotation){
-        differentialDrive1.arcadeDrive(speed,rotation);
+        differentialDrive1.arcadeDrive(speed,rotation,true);
     }
 
     private double my_getRight_Motor_Rotation_Value(){

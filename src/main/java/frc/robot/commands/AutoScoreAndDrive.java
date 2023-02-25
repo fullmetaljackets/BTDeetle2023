@@ -39,8 +39,8 @@ public class AutoScoreAndDrive extends SequentialCommandGroup {
         //          new command3(argsN, subsystem)
         //      )    
         //  );
-        new IntakeEject(-1, m_intake).withTimeout(2),
-        new DriverWithJoy(()->-.5, ()->0.0, m_driverTrain).withTimeout(2)
+        new IntakeEject(-0.8, m_intake).withTimeout(2),
+        new DriverWithJoy(()->-.5, ()->0.0, m_driverTrain).withTimeout(3)
 
         );
     }
