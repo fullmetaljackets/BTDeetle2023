@@ -42,13 +42,14 @@ public class AutoScoreAndDrive extends SequentialCommandGroup {
         //      )    
         //  );
         new DriverResetGyro(m_driverTrain),
-        new ArmRaise(m_arm),
-        new WaitCommand(1),
+        new ArmLower(m_arm),
+        new WaitCommand(2.5),
         new IntakeEject(-0.8, m_intake).withTimeout(2),
+        new ArmRaise(m_arm),
         //new DriverWithJoy(()->-.5, ()->0.0, m_driverTrain).withTimeout(3)
-        new DriveToSetpoint_Distance(-.5, 30 , m_driverTrain),
-        new DriveToSetpoint_Distance(.5, 10, m_driverTrain),
-        new DriverWithJoy(() -> 0, () -> .4 , m_driverTrain).withTimeout(1)
+        new DriveToSetpoint_Distance(-.5, 160 , m_driverTrain),
+        new DriveToSetpoint_Distance(.5, 85, m_driverTrain),
+        new DriverWithJoy(() -> 0, () -> .5 , m_driverTrain).withTimeout(1.2)
         //new DriverSpinToSetpoint(90, m_driverTrain)
 
         );
